@@ -11,7 +11,7 @@ interface MetadataStoreInterface
      * @param  mixed  $default
      * @return mixed
      */
-    public function graph($key = null, $default = null);
+    public function graph(?string $key = null, ?array $default = null);
 
     /**
      * Get metadata from a state.
@@ -24,7 +24,7 @@ interface MetadataStoreInterface
      *
      * @throws \SM\SMException If the state does not exist.
      */
-    public function state($state, $key = null, $default = null);
+    public function state(string $state, ?string $key = null, ?array $default = null);
 
     /**
      * Get metadata from a transaction.
@@ -37,5 +37,5 @@ interface MetadataStoreInterface
      *
      * @throws \SM\SMException If the transition does not exist.
      */
-    public function transition($transition, $key = null, $default = null);
+    public function transition(string $transition, ?string $key = null, ?array $default = null);
 }

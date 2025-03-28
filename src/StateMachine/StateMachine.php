@@ -27,9 +27,9 @@ class StateMachine extends BaseStateMachine
     public function __construct(
         $object,
         array $config,
-        EventDispatcherInterface $dispatcher = null,
-        CallbackFactoryInterface $callbackFactory = null,
-        MetadataStoreInterface $metadataStore = null
+        ?EventDispatcherInterface $dispatcher = null,
+        ?CallbackFactoryInterface $callbackFactory = null,
+        ?MetadataStoreInterface $metadataStore = null
     ) {
         parent::__construct($object, $config, $dispatcher, $callbackFactory);
 
@@ -176,7 +176,7 @@ class StateMachine extends BaseStateMachine
      * @param  mixed  $default
      * @return \Sebdesign\SM\Metadata\MetadataStoreInterface
      */
-    public function metadata($type = null, $subject = null, $key = null, $default = null)
+    public function metadata(?string $type = null, ?string $subject = null, ?string $key = null, ?array $default = null)
     {
         if (is_null($type)) {
             return $this->metadataStore;

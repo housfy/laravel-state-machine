@@ -20,7 +20,7 @@ class MetadataStore implements MetadataStoreInterface
     /**
      * {@inheritdoc}
      */
-    public function graph($key = null, $default = null)
+    public function graph(?string $key = null, ?array $default = null)
     {
         return $this->get($this->config, $key, $default);
     }
@@ -28,7 +28,7 @@ class MetadataStore implements MetadataStoreInterface
     /**
      * {@inheritdoc}
      */
-    public function state($state, $key = null, $default = null)
+    public function state($state, ?string $key = null, ?array $default = null)
     {
         foreach ($this->config['states'] as $value) {
             if ($value['name'] == $state) {
@@ -46,7 +46,7 @@ class MetadataStore implements MetadataStoreInterface
     /**
      * {@inheritdoc}
      */
-    public function transition($transition, $key = null, $default = null)
+    public function transition(string $transition, ?string $key = null, ?array $default = null)
     {
         if (! isset($this->config['transitions'][$transition])) {
             throw new SMException(sprintf(
