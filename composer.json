@@ -1,5 +1,5 @@
 {
-    "name": "sebdesign/laravel-state-machine",
+    "name": "housfy/laravel-state-machine",
     "description": "Winzou State Machine service provider for Laravel",
     "keywords": [
         "laravel",
